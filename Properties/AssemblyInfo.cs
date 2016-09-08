@@ -7,7 +7,7 @@ using System.Resources;
 [assembly: AssemblyTitle("HttpApiClient")]
 [assembly: AssemblyDescription("Simple client library for parsing HTTP API responses")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("cosmos labs")]
+[assembly: AssemblyCompany("Costin Morariu")]
 [assembly: AssemblyProduct("HttpApiClient")]
 [assembly: AssemblyCopyright("Copyright © 2013")]
 [assembly: AssemblyTrademark("")]

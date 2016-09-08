@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>HttpApiClient</id>
+    <version>1.0.0</version>
+    <title>HttpApiClient</title>
+    <authors>Costin Morariu</authors>
+    <owners>Costin Morariu</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple client library for parsing HTTP API responses</description>
+    <releaseNotes>First stable release</releaseNotes>
+    <copyright>Copyright © 2013</copyright>
+    <tags>HttpApiClient</tags>
+	<dependencies>
+		<group targetFramework ="portable">
+			<dependency id="Newtonsoft.Json" version="9.0.1"/>
+			<dependency id="Microsoft.Net.Http" version="2.2.29"/>
+	  </group>
+    </dependencies>
+  </metadata>
+</package>
