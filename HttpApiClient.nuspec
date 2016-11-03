@@ -8,7 +8,7 @@
     <owners>Costin Morariu</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Simple client library for parsing HTTP API responses</description>
-    <releaseNotes>First stable release</releaseNotes>
+    <releaseNotes>Naming changes and methods replaced with properties for better readability</releaseNotes>
     <copyright>Copyright © 2013</copyright>
     <tags>HttpApiClient</tags>
 	<dependencies>
