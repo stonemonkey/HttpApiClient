@@ -23,7 +23,7 @@ namespace HttpApiClient.Requests
         protected override async Task<HttpResponseMessage> SendRequestAsync(
             HttpClient client, string url, CancellationToken cancellationToken)
         {
-            return await client.PostAsync(url, Config.GetContent(), cancellationToken);
+            return await client.PostAsync(url, TypedConfig.GetContent(), cancellationToken);
         }
     }
 }

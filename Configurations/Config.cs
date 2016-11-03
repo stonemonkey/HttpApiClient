@@ -32,17 +32,17 @@ namespace HttpApiClient.Configurations
             _isSecured = isSecured;
         }
        
-        public override string Url()
+        public override string BuildUrl()
         {
-            string url = Protocol() + "://" + _resource;
+            string url = GetProtocol() + "://" + _resource;
             if (HasParams())
             {
-                url += "?" + Params();
+                url += "?" + QueryStringParams();
             }
             return url;
         }
 
-        protected string Protocol()
+        protected string GetProtocol()
         {
             return (_isSecured ? "https" : "http");
         }

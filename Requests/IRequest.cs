@@ -10,11 +10,11 @@ namespace HttpApiClient.Requests
 {
     public interface IRequest
     {
-        ConfigBase GetConfig();
+        ConfigBase Config { get; }
+
+        Exception Exception { get; }
 
         bool IsSuccessful();
-
-        Exception GetException();
 
         Task<Response<TResponseParser>> RunAsync<TResponseParser>()
             where TResponseParser : IResponseParser, new();

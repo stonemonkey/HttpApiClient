@@ -20,23 +20,16 @@ namespace HttpApiClient.Requests
     {
         public TimeSpan Timeout { get; set; } = TimeSpan.FromSeconds(10);
 
-        private Exception _exception;
-        public virtual Exception GetException()
-        {
-            return _exception;
-        }
-       
+        protected TConfig TypedConfig;
+
+        public ConfigBase Config => TypedConfig;
+
+        public Exception Exception { get; private set; }
+
         public virtual bool IsSuccessful()
         {
             return !_cancelactionTokenSource.IsCancellationRequested &&
-                   (_exception == null);
-        }
-
-        protected TConfig Config;
-
-        public ConfigBase GetConfig()
-        {
-            return Config;
+                   (Exception == null);
         }
 
         private readonly IResponseLogger _logger;
@@ -52,7 +45,7 @@ namespace HttpApiClient.Requests
                 throw new ArgumentNullException(nameof(config));
             }
 
-            Config = config;
+            TypedConfig = config;
             _logger = logger;
         }
 
@@ -71,14 +64,14 @@ namespace HttpApiClient.Requests
             where TResponseParser : IResponseParser, new()
         {
             _cancelactionTokenSource = new CancellationTokenSource();
-            _exception = null;
+            Exception = null;
 
             var stopwatch = Stopwatch.StartNew();
             Response<TResponseParser> response = null;
             try
             {
                 var httpResponse = await SendRequestAsync(
-                    CreateClient(), Config.Url(), _cancelactionTokenSource.Token);
+                    CreateClient(), TypedConfig.BuildUrl(), _cancelactionTokenSource.Token);
 
                 response = await CreateResponse<TResponseParser>(httpResponse);
             }
@@ -106,7 +99,7 @@ namespace HttpApiClient.Requests
             where TResponseParser : IResponseParser, new()
         {
             var response = new Response<TResponseParser>(this);
-            _exception = e;
+            Exception = e;
 
             return response;
         }
@@ -119,7 +112,7 @@ namespace HttpApiClient.Requests
             {
                 // it seems that on timeout HttpClient throws TaskCanceledException instead of WebException
                 //https://social.msdn.microsoft.com/Forums/en-US/d8d87789-0ac9-4294-84a0-91c9fa27e353/bug-in-httpclientgetasync-should-throw-webexception-not-taskcanceledexception?forum=netfxnetcom
-                _exception = e;
+                Exception = e;
             }
 
             return response;
@@ -155,7 +148,7 @@ namespace HttpApiClient.Requests
 
         private void TryAddCustomHeaders(HttpClient client)
         {
-            var headers = Config.Headers();
+            var headers = TypedConfig.Headers;
             if (headers != null)
             {
                 foreach (var header in headers.Where(header => !_excludedHeaders.Contains(header.Key)))

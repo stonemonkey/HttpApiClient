@@ -10,17 +10,12 @@ namespace HttpApiClient.Configurations
 {
     public abstract class ConfigBase
     {
-        private readonly Dictionary<string, string> _headers = new Dictionary<string, string>();
-
-        public IDictionary<string, string> Headers()
-        {
-            return _headers;
-        }
+        internal Dictionary<string, string> Headers { get; } = new Dictionary<string, string>();
 
         public void AddHeader(string name, string value)
         {
-            _headers.Remove(name);
-            _headers.Add(name, value);
+            Headers.Remove(name);
+            Headers.Add(name, value);
         }
 
         private readonly Dictionary<string, string> _params = new Dictionary<string, string>();
@@ -40,13 +35,13 @@ namespace HttpApiClient.Configurations
             return _params.Any();
         }
 
-        protected string Params()
+        protected string QueryStringParams()
         {
             return string.Join("&", _params
                 .Select(arg => arg.Key + '=' + Uri.EscapeDataString(arg.Value)));
         }
 
-        public abstract string Url();
+        public abstract string BuildUrl();
 
         public abstract HttpContent GetContent();
     }

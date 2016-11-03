@@ -144,7 +144,7 @@ namespace HttpApiClient
             {
                 action?.Invoke(response.TypedParser);
 
-                throw new ServerException(response.Request.GetException());
+                throw new ServerException(response.Request.Exception);
             }
 
             return response;
@@ -161,7 +161,7 @@ namespace HttpApiClient
                     await func(response.TypedParser);
                 }
 
-                throw new ServerException(response.Request.GetException());
+                throw new ServerException(response.Request.Exception);
             }
 
             return response;
@@ -174,7 +174,7 @@ namespace HttpApiClient
 
         public static bool IsRequestTimeout(this Response response)
         {
-            return response.Request.GetException() is TaskCanceledException;
+            return response.Request.Exception is TaskCanceledException;
         }
 
         #endregion
