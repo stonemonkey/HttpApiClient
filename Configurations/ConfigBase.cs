@@ -10,34 +10,38 @@ namespace HttpApiClient.Configurations
 {
     public abstract class ConfigBase
     {
-        internal Dictionary<string, string> Headers { get; } = new Dictionary<string, string>();
+        public Dictionary<string, string> Headers { get; } = new Dictionary<string, string>();
 
         public void AddHeader(string name, string value)
         {
             Headers.Remove(name);
-            Headers.Add(name, value);
-        }
-
-        private readonly Dictionary<string, string> _params = new Dictionary<string, string>();
-
-        public void AddParam(string name, string value)
-        {
-            _params.Remove(name);
 
             if (!string.IsNullOrWhiteSpace(value))
             {
-                _params.Add(name, value);
+                Headers.Add(name, value);
+            }
+        }
+
+        public Dictionary<string, string> Params { get; } = new Dictionary<string, string>();
+
+        public void AddParam(string name, string value)
+        {
+            Params.Remove(name);
+
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                Params.Add(name, value);
             }
         }
 
         protected bool HasParams()
         {
-            return _params.Any();
+            return Params.Any();
         }
 
-        protected string QueryStringParams()
+        protected string GetQueryStringParams()
         {
-            return string.Join("&", _params
+            return string.Join("&", Params
                 .Select(arg => arg.Key + '=' + Uri.EscapeDataString(arg.Value)));
         }
 

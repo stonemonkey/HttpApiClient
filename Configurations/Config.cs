@@ -37,7 +37,7 @@ namespace HttpApiClient.Configurations
             string url = GetProtocol() + "://" + _resource;
             if (HasParams())
             {
-                url += "?" + QueryStringParams();
+                url += "?" + GetQueryStringParams();
             }
             return url;
         }
