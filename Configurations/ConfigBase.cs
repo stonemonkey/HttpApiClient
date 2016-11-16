@@ -42,7 +42,7 @@ namespace HttpApiClient.Configurations
         protected string GetQueryStringParams()
         {
             return string.Join("&", Params
-                .Select(arg => arg.Key + '=' + Uri.EscapeDataString(arg.Value)));
+                .Select(arg => $"{arg.Key}={Uri.EscapeDataString(arg.Value)}"));
         }
 
         public abstract string BuildUrl();

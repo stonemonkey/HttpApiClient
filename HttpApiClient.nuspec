@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>HttpApiClient</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>HttpApiClient</title>
     <authors>Costin Morariu</authors>
     <owners>Costin Morariu</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Simple client library for parsing HTTP API responses</description>
-    <releaseNotes>Fixed missing configuration headers property</releaseNotes>
+    <releaseNotes>Fixed Config class constructors to speciffically initialize URN or URL instances</releaseNotes>
     <copyright>Copyright © 2013</copyright>
 	<projectUrl>https://github.com/stonemonkey/HttpApiClient</projectUrl>
 	<licenseUrl>https://github.com/stonemonkey/HttpApiClient/blob/master/LICENSE</licenseUrl>

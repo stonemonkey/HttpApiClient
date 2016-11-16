@@ -11,18 +11,26 @@ namespace HttpApiClient.Configurations
         private readonly string _type;
         private readonly string _data;
 
-        public UploadConfig(string resource, string data)
-            : this(resource, IsSecured, data)
+        public UploadConfig(string url, string data)
+            : this(url, data, DefaultContentType)
+        {
+            _data = data;
+        }
+
+        public UploadConfig(string url, string data, string type)
+            : base(url)
+        {
+            _data = data;
+            _type = type;
+        }
+
+        public UploadConfig(string urn, bool isSecured, string data)
+            : this(urn, isSecured, data, DefaultContentType)
         {
         }
 
-        public UploadConfig(string resource, bool isSecured, string data)
-            : this(resource, isSecured, data, DefaultContentType)
-        {
-        }
-
-        public UploadConfig(string resource, bool isSecured, string data, string type)
-            : base(resource, isSecured)
+        public UploadConfig(string urn, bool isSecured, string data, string type)
+            : base(urn, isSecured)
         {
             _data = data;
             _type = type;
