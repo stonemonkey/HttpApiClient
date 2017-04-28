@@ -17,7 +17,7 @@ namespace HttpApiClient
             this Response<TResponseParser> response, Action<TResponseParser> action)
                 where TResponseParser : IResponseParser
         {
-            if (response.Request.IsSuccessful() && response.IsSuccessfull())
+            if (IsSuccessfull(response))
             {
                 action(response.TypedParser);
             }
@@ -29,7 +29,7 @@ namespace HttpApiClient
             this Response<TResponseParser> response, Func<TResponseParser, Task> func)
                 where TResponseParser : IResponseParser
         {
-            if (response.IsSuccessfull())
+            if (IsSuccessfull(response))
             {
                 await func(response.TypedParser);
             }
