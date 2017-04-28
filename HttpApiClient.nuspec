@@ -8,18 +8,21 @@
     <owners>Costin Morariu</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Simple client library for parsing HTTP API responses</description>
-    <releaseNotes>Updated dependencies</releaseNotes>
+    <releaseNotes>Update nuget specifications to support Nuget Package Manager 4.1.0 (Visual Studio 2017)</releaseNotes>
     <copyright>Copyright © 2013</copyright>
-	<projectUrl>https://github.com/stonemonkey/HttpApiClient</projectUrl>
-	<licenseUrl>https://github.com/stonemonkey/HttpApiClient/blob/master/LICENSE</licenseUrl>
+	  <projectUrl>https://github.com/stonemonkey/HttpApiClient</projectUrl>
+	  <licenseUrl>https://github.com/stonemonkey/HttpApiClient/blob/master/LICENSE</licenseUrl>
     <tags>HttpApiClient</tags>
-	<dependencies>
-		<group targetFramework ="portable">
-      <dependency id="Microsoft.Bcl" version="1.1.10"/>
-      <dependency id="Microsoft.Bcl.Build" version="1.0.14"/>
-      <dependency id="Microsoft.Net.Http" version="2.2.29"/>
-      <dependency id="Newtonsoft.Json" version="10.0.2"/>
-    </group>
+	  <dependencies>
+		  <group targetFramework ="portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10+xamarinmac20">
+        <dependency id="Microsoft.Bcl" version="1.1.10"/>
+        <dependency id="Microsoft.Bcl.Build" version="1.0.14"/>
+        <dependency id="Microsoft.Net.Http" version="2.2.29"/>
+        <dependency id="Newtonsoft.Json" version="10.0.2"/>
+      </group>
     </dependencies>
   </metadata>
+  <files>
+    <file src="bin\Release\HttpApiClient.dll" target="lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10+xamarinmac20" />
+  </files>
 </package>
