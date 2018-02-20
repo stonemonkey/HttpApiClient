@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpApiClient", "HttpApiCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Server.WebApi", "Test.Server.WebApi\Test.Server.WebApi.csproj", "{28888A73-B03A-4698-901E-D1181497280A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpApiClient.Tests", "HttpApiClient.Tests\HttpApiClient.Tests.csproj", "{349569A7-D006-4D68-903F-EEE88487BA28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,22 @@ Global
 		{28888A73-B03A-4698-901E-D1181497280A}.Release|x64.Build.0 = Release|Any CPU
 		{28888A73-B03A-4698-901E-D1181497280A}.Release|x86.ActiveCfg = Release|Any CPU
 		{28888A73-B03A-4698-901E-D1181497280A}.Release|x86.Build.0 = Release|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Debug|ARM.Build.0 = Debug|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Debug|x64.Build.0 = Debug|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Debug|x86.Build.0 = Debug|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Release|ARM.ActiveCfg = Release|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Release|ARM.Build.0 = Release|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Release|x64.ActiveCfg = Release|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Release|x64.Build.0 = Release|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Release|x86.ActiveCfg = Release|Any CPU
+		{349569A7-D006-4D68-903F-EEE88487BA28}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
