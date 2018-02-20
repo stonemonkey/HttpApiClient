@@ -19,7 +19,6 @@ Check HttpApiClient.Tests project for running code.
     {
         var config = new Config($"localhost:64195/api/products/{productId}", false);
         var request = new GetRequest(config, _responseLogger);
-        var response = await request.RunAsync<JsonParser>();
 
         Product product = null;
         (await request.RunAsync<JsonParser>())
