@@ -5,7 +5,7 @@ using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace HttpApiClient.Requests
+namespace HttpApiClient
 {
     public class ConsoleResponseLogger : IResponseLogger
     {
