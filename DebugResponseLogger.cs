@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace HttpApiClient
 {
-    public class ConsoleResponseLogger : IResponseLogger
+    [Obsolete("Implement your own logger. This is used only for testing in Debug mode. It will not log in Release and since Nuget package is build in Release it's useless.")]
+    public class DebugResponseLogger : IResponseLogger
     {
         public Task LogAsync(Response response, TimeSpan duration)
         {

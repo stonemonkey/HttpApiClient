@@ -18,7 +18,7 @@ namespace HttpApiClient.Tests
     {
         private const string Server = "localhost:64195/api";
 
-        private IResponseLogger _responseLogger = new ConsoleResponseLogger();
+        private IResponseLogger _responseLogger = new DebugResponseLogger();
 
         [Test]
         public async Task Can_create_new_item()

@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>HttpApiClient</id>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <title>HttpApiClient</title>
     <authors>Costin Morariu</authors>
     <owners>Costin Morariu</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Simple client library for parsing HTTP API responses</description>
-    <releaseNotes>Added ConsoleResponseLogger and JsonParserExtensions.</releaseNotes>
+    <releaseNotes>Renamed ConsoleResponseLogger to DebugResponseLogger.</releaseNotes>
     <copyright>Copyright © 2013</copyright>
 	  <projectUrl>https://github.com/stonemonkey/HttpApiClient</projectUrl>
 	  <licenseUrl>https://github.com/stonemonkey/HttpApiClient/blob/master/LICENSE</licenseUrl>

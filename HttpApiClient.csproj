@@ -104,7 +104,7 @@
     <Compile Include="Parsers\JsonParserExtensions.cs" />
     <Compile Include="Parsers\StringParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ConsoleResponseLogger.cs" />
+    <Compile Include="DebugResponseLogger.cs" />
     <Compile Include="Requests\DeleteRequest.cs" />
     <Compile Include="Requests\GetRequest.cs" />
     <Compile Include="Requests\IRequest.cs" />
